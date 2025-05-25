@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Swimmer’s A.D.N</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header><h1>Swimmer’s A.D.N</h1><p><em>Șansă la normalitate</em></p></header>
+  <section id="auth-section"><h2>Autentificare</h2><input id="login-username" placeholder="Utilizator"><input id="login-password" type="password" placeholder="Parolă"><button onclick="loginUser()">Autentificare</button></section>
+  <section id="chat-section" style="display:none"><h2>Chat Comunitate</h2><input id="chatInput" placeholder="Scrie un mesaj..."><button onclick="addMessage()">Trimite</button><div id="chatMessages"></div><button id="logout-btn" onclick="logoutUser()" style="display:none">Deconectare</button></section>
+  <section class="gallery-upload" style="display:none"><h2>Încărcă imagine (Admin)</h2><input type="file" id="imageInput" accept="image/*"><button onclick="uploadImage()">Încarcă</button></section>
+  <section class="gallery-view"><h2>Galeria Swimer</h2><div id="galleryContainer"></div></section>
+  <div class="contact-section" style="display:none">
+    <h3>Contactează-ne</h3>
+    <p><strong>Pentru programări, nu ezitați să sunați!</strong><br><em>Programare în limita disponibilității.</em></p>
+    <form action="https://formspree.io/f/mwkgbnvy" method="POST" onsubmit="handleFormSubmit(event)">
+      <input name="nume" placeholder="Nume" required>
+      <input name="email" type="email" placeholder="Email" required>
+      <textarea name="mesaj" placeholder="Mesaj" required></textarea>
+      <button type="submit">Trimite</button>
+    </form>
+    <p>📞 +40739647616<br>✉️ eduardhh1@gmail.com<br>📍 Complexul de Natație Otopeni</p>
+    <a href="tel:+40739647616">Sună acum</a><br>
+    <iframe src="https://www.google.com/maps?q=Complexul+de+Natație+Otopeni&output=embed" class="map"></iframe><br>
+    <a href="https://www.google.com/maps/search/?api=1&query=Complexul+de+Natație+Otopeni" target="_blank">Google Maps</a> | <a href="https://waze.com/ul?ll=44.5497,26.0727&navigate=yes" target="_blank">Waze</a>
+  </div>
+  <div class="inclusion-story">
+    <h3>Șansa la normalitate</h3>
+    <p>La Swimmer’s A.D.N, pentru fiecare două abonamente achiziționate, oferim gratuit acces unei persoane cu dizabilități.</p>
+  </div>
+  <section id="faq-section">
+    <h3>Întrebări frecvente</h3>
+    <div class="faq-grid">
+      <div><h4>Î: Cum mă înscriu?</h4><p>R: Contactează-ne prin formular sau telefon.</p></div>
+      <div><h4>Î: Ce include?</h4><p>R: 8 ședințe, acces piscină, echipament.</p></div>
+      <div><h4>Î: Program?</h4><p>R: L-V 8-20, S 9-14.</p></div>
+      <div><h4>Î: Unde?</h4><p>R: Complexul de Natație Otopeni.</p></div>
+    </div>
+  </section>
+</body>
+</html>
