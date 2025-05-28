@@ -9,35 +9,70 @@
 </head>
 <body>
   <header><h1>Swimmer’s A.D.N</h1><p><em>Șansă la normalitate</em></p></header>
-  <section id="auth-section"><h2>Autentificare</h2><input id="login-username" placeholder="Utilizator"><input id="login-password" type="password" placeholder="Parolă"><button onclick="loginUser()">Autentificare</button></section>
-  <section id="chat-section" style="display:none"><h2>Chat Comunitate</h2><input id="chatInput" placeholder="Scrie un mesaj..."><button onclick="addMessage()">Trimite</button><div id="chatMessages"></div><button id="logout-btn" onclick="logoutUser()" style="display:none">Deconectare</button></section>
-  <section class="gallery-upload" style="display:none"><h2>Încărcă imagine (Admin)</h2><input type="file" id="imageInput" accept="image/*"><button onclick="uploadImage()">Încarcă</button></section>
-  <section class="gallery-view"><h2>Galeria Swimer</h2><div id="galleryContainer"></div></section>
-  <div class="contact-section" style="display:none">
+  <section id="auth-section" class="auth-form">
+    <h2>Autentificare</h2>
+    <input id="login-username" placeholder="Utilizator">
+    <input id="login-password" type="password" placeholder="Parolă">
+    <button onclick="loginUser()">Autentificare</button>
+  </section>
+  <section id="chat-section" class="chat-box" style="display:none">
+    <h2>Chat Comunitate</h2>
+    <input id="chatInput" placeholder="Scrie un mesaj...">
+    <button onclick="addMessage()">Trimite</button>
+    <div id="chatMessages" class="chat-messages"></div>
+    <button id="logout-btn" onclick="logoutUser()" style="display:none">Deconectare</button>
+  </section>
+  <section class="gallery-upload" style="display:none">
+    <h2>Încărcă imagine (Admin)</h2>
+    <input type="file" id="imageInput" accept="image/*">
+    <button onclick="uploadImage()">Încarcă</button>
+  </section>
+  <section class="gallery-view">
+    <h2>Galeria Swimer</h2>
+    <div id="galleryContainer"></div>
+  </section>
+  <div class="contact-section" style="display:none; max-width: 600px; margin: 2em auto; background: #fff; padding: 1em; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
     <h3>Contactează-ne</h3>
-    <p><strong>Pentru programări, nu ezitați să sunați!</strong><br><em>Programare în limita disponibilității.</em></p>
+    <p style="margin-bottom: 1em; font-size: 1em; color: #333;"><strong>Pentru programări, nu ezitați să sunați!</strong><br><em>Programare în limita disponibilității.</em></p>
     <form action="https://formspree.io/f/mwkgbnvy" method="POST" onsubmit="handleFormSubmit(event)">
-      <input name="nume" placeholder="Nume" required>
-      <input name="email" type="email" placeholder="Email" required>
-      <textarea name="mesaj" placeholder="Mesaj" required></textarea>
+      <label for="nume">Nume:</label>
+      <input type="text" id="nume" name="nume" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="mesaj">Mesaj:</label>
+      <textarea id="mesaj" name="mesaj" rows="5" required></textarea>
       <button type="submit">Trimite</button>
     </form>
-    <p>📞 +40739647616<br>✉️ eduardhh1@gmail.com<br>📍 Complexul de Natație Otopeni</p>
-    <a href="tel:+40739647616">Sună acum</a><br>
+    <p>📞 +40739647616<br>✉️ eduardhh1@gmail.com<br>📍 Complexul de Natație Otopeni<br>
+    <a href="tel:+40739647616" class="btn-call">Sună acum</a><br>
     <iframe src="https://www.google.com/maps?q=Complexul+de+Natație+Otopeni&output=embed" class="map"></iframe><br>
-    <a href="https://www.google.com/maps/search/?api=1&query=Complexul+de+Natație+Otopeni" target="_blank">Google Maps</a> | <a href="https://waze.com/ul?ll=44.5497,26.0727&navigate=yes" target="_blank">Waze</a>
+    <a href="https://www.google.com/maps/search/?api=1&query=Complexul+de+Natație+Otopeni" target="_blank">Google Maps</a> | 
+    <a href="https://waze.com/ul?ll=44.5497,26.0727&navigate=yes" target="_blank">Waze</a>
+    </p>
   </div>
-  <div class="inclusion-story">
-    <h3>Șansa la normalitate</h3>
-    <p>La Swimmer’s A.D.N, pentru fiecare două abonamente achiziționate, oferim gratuit acces unei persoane cu dizabilități.</p>
+  <div class="inclusion-story" style="max-width: 700px; margin: 3em auto; padding: 1.5em; background: #f4f8fc; border-left: 6px solid #0077b6; border-radius: 8px;">
+    <h3 style="color: #0077b6;">Șansa la normalitate</h3>
+    <p>La Swimmer’s A.D.N, credem cu tărie că fiecare persoană merită acces egal la oportunități. Pentru fiecare două abonamente achiziționate, oferim gratuit acces unei persoane cu dizabilități.</p>
   </div>
-  <section id="faq-section">
-    <h3>Întrebări frecvente</h3>
-    <div class="faq-grid">
-      <div><h4>Î: Cum mă înscriu?</h4><p>R: Contactează-ne prin formular sau telefon.</p></div>
-      <div><h4>Î: Ce include?</h4><p>R: 8 ședințe, acces piscină, echipament.</p></div>
-      <div><h4>Î: Program?</h4><p>R: L-V 8-20, S 9-14.</p></div>
-      <div><h4>Î: Unde?</h4><p>R: Complexul de Natație Otopeni.</p></div>
+  <section id="faq-section" style="max-width:700px; margin:2em auto;">
+    <h3 style="font-size:1.5em; color:#0077b6;">Întrebări frecvente</h3>
+    <div class="faq-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:1em;">
+      <div class="faq-item" style="background:#fff; padding:1em; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        <h4>Î: Cum mă înscriu la cursurile de înot?</h4>
+        <p>R: Alege unul dintre abonamentele noastre și contactează-ne prin formularul de contact sau la telefon +40739647616.</p>
+      </div>
+      <div class="faq-item" style="background:#fff; padding:1em; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        <h4>Î: Ce include abonamentul de bază?</h4>
+        <p>R: Abonamentul de bază include 8 ședințe private, acces la piscină și echipament de bază.</p>
+      </div>
+      <div class="faq-item" style="background:#fff; padding:1em; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        <h4>Î: Care este programul de funcționare?</h4>
+        <p>R: Suntem deschiși de luni până vineri între 8:00 și 20:00 și sâmbătă 9:00–14:00.</p>
+      </div>
+      <div class="faq-item" style="background:#fff; padding:1em; border-radius:8px; box-shadow:0 2px 5px rgba(0,0,0,0.1);">
+        <h4>Î: Unde vă găsesc?</h4>
+        <p>R: Ne poți găsi în Complexul de Natație Otopeni, lângă intrarea principală.</p>
+      </div>
     </div>
   </section>
 </body>
